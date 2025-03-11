@@ -7,6 +7,18 @@
         ":gitSignOff",
         ":preserveSemverRanges"
     ],
-    "timezone": "America/New_York",
-    "osvVulnerabilityAlerts": true
+    "osvVulnerabilityAlerts": true,
+    "internalChecksFilter": "strict",
+    "packageRules": [
+        {
+            "description": "npm packages must be at least 72 hours old (unpublish waiting period)",
+            "matchDatasources": ["npm"],
+            "minimumReleaseAge": "3 days"
+        },
+        {
+            "description": "limit aws-sdk package updates to monday between 21:00 and 23:00",
+            "matchPackageNames": ["@aws-sdk/*"],
+            "schedule": ["* 21-23 * * 1"]
+        }
+    ]
 }
