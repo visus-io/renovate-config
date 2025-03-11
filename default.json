@@ -1,11 +1,14 @@
 {
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "description": "Baseline Renovate Configuration",
     "configMigration": true,
+    "gitIgnoredAuthors": [
+        "renovate@whitesourcesoftware.com"
+    ],
     "extends": [
         "config:recommended",
         ":disableDependencyDashboard",
-        ":gitSignOff",
-        ":preserveSemverRanges"
+        ":gitSignOff"        
     ],
     "osvVulnerabilityAlerts": true,
     "internalChecksFilter": "strict",

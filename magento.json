@@ -1,0 +1,17 @@
+{
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "description": "Magento Renovate Preset",
+    "ignoreDeps": [        
+        "magento/magento-cloud-metapackage",
+        "magento/product-community-edition", 
+        "magento/product-enterprise-edition"
+    ],
+    "ignorePaths": [
+        "**/app/code/**/composer.json",
+        "**/app/design/**"
+    ],
+    "lockFileMaintenance": {
+        "enabled": true
+    },
+    "rangeStrategy": "update-lockfile"
+}
