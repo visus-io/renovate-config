@@ -8,20 +8,60 @@
     "extends": [
         "config:recommended",
         ":disableDependencyDashboard",
-        ":gitSignOff"        
+        ":gitSignOff"
     ],
     "osvVulnerabilityAlerts": true,
     "internalChecksFilter": "strict",
     "packageRules": [
         {
+            "automerge": true,
+            "matchUpdateTypes": [
+                "digest",
+                "minor",
+                "patch"
+            ],
+            "groupName": "all non-major dependencies",
+            "groupSlug": "all-minor-patch",
+            "labels": [
+                "Dependencies: Minor-Patch"
+            ],
+            "schedule": [
+                "after 8:00am"
+            ],
+            "matchPackageNames": [
+                "*"
+            ]
+        },
+        {
+            "automerge": false,
+            "matchUpdateTypes": [
+                "major"
+            ],
+            "labels": [
+                "Dependencies: Major (Breaking)"
+            ],
+            "schedule": [
+                "after 8:00am on tuesday"
+            ],
+            "matchPackageNames": [
+                "*"
+            ]
+        },
+        {
             "description": "npm packages must be at least 72 hours old (unpublish waiting period)",
-            "matchDatasources": ["npm"],
+            "matchDatasources": [
+                "npm"
+            ],
             "minimumReleaseAge": "3 days"
         },
         {
             "description": "limit aws-sdk package updates to monday between 21:00 and 23:00",
-            "matchPackageNames": ["@aws-sdk/*"],
-            "schedule": ["* 21-23 * * 1"]
-        }
+            "matchPackageNames": [
+                "@aws-sdk/*"
+            ],
+            "schedule": [
+                "* 21-23 * * 1"
+            ]
+        }        
     ]
 }
