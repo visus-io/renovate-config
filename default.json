@@ -14,6 +14,7 @@
     ],
     "osvVulnerabilityAlerts": true,
     "internalChecksFilter": "strict",
+    "timezone": "America/New_York",
     "packageRules": [
         {
             "matchUpdateTypes": [
@@ -27,7 +28,7 @@
                 "Dependencies: Minor-Patch"
             ],
             "schedule": [
-                "0 8 * * *"
+                "* 8 * * *"
             ]
         },
         {
@@ -38,7 +39,7 @@
                 "Dependencies: Major (Breaking)"
             ],
             "schedule": [
-                "0 8 * * 2"
+                "* 8 * * 2"
             ]
         },
         {
