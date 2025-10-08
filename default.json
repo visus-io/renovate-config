@@ -27,7 +27,7 @@
                 "Dependencies: Minor-Patch"
             ],
             "schedule": [
-                "after 8:00am"
+                "0 8 * * *"
             ]
         },
         {
@@ -38,7 +38,7 @@
                 "Dependencies: Major (Breaking)"
             ],
             "schedule": [
-                "after 8:00am on tuesday"
+                "0 8 * * 2"
             ]
         },
         {
