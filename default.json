@@ -7,14 +7,15 @@
     ],
     "extends": [
         "config:recommended",
+        ":automergeMinor",
         ":disableDependencyDashboard",
-        ":gitSignOff"
+        ":gitSignOff",
+        ":separateMultipleMajorReleases"
     ],
     "osvVulnerabilityAlerts": true,
     "internalChecksFilter": "strict",
     "packageRules": [
         {
-            "automerge": true,
             "matchUpdateTypes": [
                 "digest",
                 "minor",
@@ -27,13 +28,9 @@
             ],
             "schedule": [
                 "after 8:00am"
-            ],
-            "matchPackageNames": [
-                "*"
             ]
         },
         {
-            "automerge": false,
             "matchUpdateTypes": [
                 "major"
             ],
@@ -42,9 +39,6 @@
             ],
             "schedule": [
                 "after 8:00am on tuesday"
-            ],
-            "matchPackageNames": [
-                "*"
             ]
         },
         {
