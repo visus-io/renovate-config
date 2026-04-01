@@ -15,6 +15,7 @@
     "osvVulnerabilityAlerts": true,
     "internalChecksFilter": "strict",
     "timezone": "America/New_York",
+    "minimumReleaseAge": "3 days",
     "packageRules": [
         {
             "matchUpdateTypes": [
@@ -41,13 +42,6 @@
             "schedule": [
                 "* 8 * * 2"
             ]
-        },
-        {
-            "description": "npm packages must be at least 72 hours old (unpublish waiting period)",
-            "matchDatasources": [
-                "npm"
-            ],
-            "minimumReleaseAge": "3 days"
         },
         {
             "description": "limit aws-sdk package updates to monday between 21:00 and 23:00",
